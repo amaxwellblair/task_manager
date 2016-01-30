@@ -1,6 +1,9 @@
+require 'sinatra/base'
+require 'yaml/store'
 require 'models/task_manager'
 
-class TaskMangerApp < Sinatra::Base
+class TaskManagerApp < Sinatra::Base
+
   set :root, File.expand_path("..", __dir__)
 
   get '/' do
@@ -8,22 +11,27 @@ class TaskMangerApp < Sinatra::Base
   end
 
   get '/tasks' do
-    @tasks = TaskManager.all
+    @tasks = task_manager.all
     erb :index
+  end
+
+  post '/tasks/new' do
+    task_manager.create(params[:tasks])
+    redirect :tasks
   end
 
   get '/tasks/new' do
     erb :new
   end
 
-  post '/tasks' do
-    TaskManager.create(params[:task])
-    redirect '/tasks'
-  end
-
   get '/tasks/:id' do |id|
-    @task = TaskManager.find(id.to_i)
+    @task = task_manager.find(id.to_i)
     erb :show
   end
-  
+
+end
+
+def task_manager
+  database = YAML::Store.new("db/task_manager")
+  @task_manager ||= TaskManager.new(database)
 end
