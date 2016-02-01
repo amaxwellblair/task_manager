@@ -12,7 +12,9 @@ class TaskManagerApp < Sinatra::Base
 
   get '/tasks' do
     @tasks = task_manager.all
-    erb :index
+    erb :template, :layout => false do
+      erb :index
+    end
   end
 
   post '/tasks/new' do
@@ -21,7 +23,9 @@ class TaskManagerApp < Sinatra::Base
   end
 
   get '/tasks/new' do
-    erb :new
+    erb :template, :layout => false do
+      erb :new
+    end
   end
 
   get '/tasks/:id' do |id|

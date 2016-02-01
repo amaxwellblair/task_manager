@@ -34,10 +34,10 @@ class TaskManager
 
   def raw_task(id)
     raw_tasks.find{|task| task['id'] == id }
+
   end
 
   def find(id)
-    puts raw_task(id)
     Task.new(raw_task(id))
   end
 

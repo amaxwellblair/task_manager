@@ -1,5 +1,5 @@
 ---
-total: 3
+total: 5
 tasks:
 - id: 1
   title: thing
@@ -10,3 +10,10 @@ tasks:
 - id: 3
   title: COokie
   description: cookie monster duh
+- id: 4
+  title: Take care of Chickens
+  description: Feed the chickens, water their beds and collect the eggs
+- id: 5
+  title: 'Task Title: Go buy a new Cow'
+  description: Bessy ended her reign as the long standing cow fighting champion. Need
+    a new cow to replace her.

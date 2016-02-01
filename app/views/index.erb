@@ -1,10 +1,17 @@
-<html>
-  <head>
-  </head>
-  <body>
-    <% @tasks.each do |task| %>
-    <h2><a href="tasks/<%= task.id %>"><%= task.title %></a></h2> 
-    <p><%= task.description %></p>
-    <% end %>
-  </body>
-</html>
+
+
+<% @tasks.each do |task| %>
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div class="card cyan">
+      <div class="card-content white-text">
+        <span class="card-title"><a class="white-text" href="tasks/<%= task.id %>">Task: <%= task.title %></a></span>
+        <p>Description: <%= task.description %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<% end %>

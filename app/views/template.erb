@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <link href="<%=url("materialize.css")%>" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+  <nav class="light-blue lighten-0" role="navigation">
+    <div class="nav-wrapper container">
+       <a href="/" class="brand-logo">Task Manager</a>
+    </div>
+  </nav>
+  <div class="container">
+    <%= yield %>
+  </div>
+  <footer class="page-footer light-blue">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">About</h5>
+              <p class="grey-text text-lighten-4">Task manager has been created so Turing students can truly experience time management. In reality no one uses it.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2016 Turing
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>
