@@ -1,6 +1,6 @@
 <html>
   <head>
-    <link href="<%=url("css/materialize.css")%>" type="text/css" rel="stylesheet">
+    <link href="http://www.example.com/css/materialize.css" type="text/css" rel="stylesheet">
   </head>
   <body>
   <nav class="light-blue lighten-0" role="navigation">
@@ -9,7 +9,30 @@
     </div>
   </nav>
   <div class="container">
-    <%= yield %>
+    
+<div id="tasks">
+
+</div>
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div class="card cyan">
+      <div class="card-content white-text">
+        <span class="card-title">Task: Test</span>
+        <p>Description: Description</p>
+      </div>
+      <div class="card-action">
+        <a class="waves-light btn light-blue" href="tasks/1">Inspect</a>
+        <a class="waves-light btn light-blue" href="tasks/1/edit">Edit</a>
+        <form method="post" action="/tasks/1" class="right">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" class="waves-light btn light-blue" value="DELETE">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
   </div>
   <footer class="page-footer light-blue">
         <div class="container">
@@ -29,6 +52,6 @@
         </div>
       </footer>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="<%=url("js/materialize.js")%>"></script>
+    <script src="http://www.example.com/js/materialize.js"></script>
   </body>
 </html>
